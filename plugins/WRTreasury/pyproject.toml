@@ -1,0 +1,10 @@
+[project]
+name = "whackrock-treasury-plugin-gamesdk"
+version = "0.1.0"
+dependencies = [
+    "web3>=6.16",
+    "aiohttp>=3.9",
+]
+
+[project.entry-points."game_python.plugins"]
+whackrock_treasury = "whackrock_treasury_plugin_gamesdk"
