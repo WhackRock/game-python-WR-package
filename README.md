@@ -1,6 +1,8 @@
 # GAME Python SDK Library
 The GAME Python SDK is a library that allows you interact and develop agents powered by the GAME architecture.
 
+Model Context Protocol (MCP)
+
 ## Overview of the Source Code Structure 
 
 There are 2 main folders in the source code (`src` folder)
