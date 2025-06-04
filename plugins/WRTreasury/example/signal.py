@@ -1,5 +1,5 @@
 """
-Derives [stETH, WBTC, USDT] weights from the latest Benjamin Cowen video.
+Derives [VIRTUAL, cbBTC, USDC] weights from the latest Benjamin Cowen video.
 
 * Downloads the auto‑caption transcript (YouTube v3 API or cheap wrapper)
 * Sends the transcript to GPT‑4o‑mini and requests JSON:
@@ -13,6 +13,7 @@ import openai
 
 openai.api_key = os.environ["OPENAI_API_KEY"]          # set in env vars
 CHANNEL_ID = "UCqK_GSMbpiV8spgD3ZGloSw"                # Benjamin Cowen
+NUM_LLM_SIGNAL_ASSETS  = 3                             # 3 tokens: VIRTUAL, cbBTC, and USDC
 
 class LLMSignal(BaseModel):
     weightSignal: conlist(float, min_length=3, max_length=3)
@@ -27,9 +28,9 @@ Output **only** valid JSON:
 {{
   "macroTone": "<bullish|neutral|bearish>",
   "riskOnOff": "<on|off>",
-  "weightSignal": [<stETH>, <WBTC>, <USDT>]  // three decimals
+  "weightSignal": [<VIRTUAL>, <cbBTC>, <USDC>]  // three decimals
 }}  
-The weights must sum to exactly 1.00."""
+The weights must sum to exactly 1.00.  Here is the transcript:"""
 
 async def fetch_transcript(session) -> str:
     async with session.get(YOUTUBE_TRANSCRIPT % CHANNEL_ID) as r:

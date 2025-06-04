@@ -12,7 +12,7 @@ from .signal import derive_weights, NUM_LLM_SIGNAL_ASSETS
 VAULT_ADDRESS = Address("0xReplaceWithYourWhackRockFundAddress")
 
 # The "BenFan" strategy, as per the signal.py, is for a conceptual set of assets
-# (e.g., stETH, WBTC, USDT, or generic Asset1, Asset2, Asset3).
+# (e.g., VIRTUAL, cbBTC, USDC, or generic Asset1, Asset2, Asset3).
 # The worker needs to manage a WhackRockFund instance.
 # CRUCIAL: The number of assets in the LLM signal (NUM_LLM_SIGNAL_ASSETS)
 # MUST match the number of `allowedTokens` in the `VAULT_ADDRESS`.
