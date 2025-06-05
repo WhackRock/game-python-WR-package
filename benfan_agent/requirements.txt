@@ -1,0 +1,15 @@
+# Core dependencies
+aiohttp>=3.8.0
+pydantic>=2.0.0
+openai>=0.27.0
+python-dotenv>=1.0.0
+
+# GAME SDK and plugins
+# Note: These should be installed from the game-python-WR-package
+# Uncomment and adjust paths as needed:
+# -e ../plugins/WRTreasury/whackrock_plugin_gamesdk
+# -e ../plugins/twitter/twitter_plugin_gamesdk
+
+# Additional utilities
+requests>=2.31.0
+typing-extensions>=4.5.0 
