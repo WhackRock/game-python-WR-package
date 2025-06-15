@@ -1,0 +1,81 @@
+name: WhackRock Treasury Plugin
+version: 0.1.0
+description: AI agent plugin for managing WhackRock investment funds
+author: WhackRock Team
+license: MIT
+homepage: https://whackrock.ai
+repository: https://github.com/whackrock/game-python-WR-package
+
+tags:
+  - defi
+  - portfolio-management
+  - ai-agents
+  - investment
+  - treasury
+  - virtuals
+  - game-framework
+
+dependencies:
+  - web3>=6.0.0
+  - game-sdk
+
+supported_chains:
+  - base
+  - ethereum
+  - arbitrum
+
+functions:
+  - name: get_current_portfolio
+    description: Get the current portfolio composition with weights
+    category: read
+    
+  - name: get_target_portfolio
+    description: Get the target portfolio composition
+    category: read
+    
+  - name: get_fund_nav
+    description: Get fund NAV in WETH and USDC
+    category: read
+    
+  - name: check_rebalance_needed
+    description: Check if portfolio needs rebalancing
+    category: read
+    
+  - name: set_portfolio_weights
+    description: Set target portfolio weights
+    category: write
+    requires_signature: true
+    
+  - name: set_weights_and_rebalance
+    description: Set weights and auto-rebalance if needed
+    category: write
+    requires_signature: true
+    
+  - name: rebalance_portfolio
+    description: Manually trigger portfolio rebalancing
+    category: write
+    requires_signature: true
+    
+  - name: collect_management_fees
+    description: Collect accrued management fees
+    category: write
+    requires_signature: true
+    
+  - name: get_agent_info
+    description: Get agent address and fee configuration
+    category: read
+
+configuration:
+  required:
+    - rpc_url: Ethereum RPC endpoint URL
+    - fund_address: WhackRockFund contract address
+  optional:
+    - private_key: Agent private key for write operations
+
+examples:
+  - file: examples/example-agent.py
+    description: Complete fund management agent
+  - file: examples/example-worker.py
+    description: Automated worker with signal integration
+  - file: example/signal.py
+    description: Benjamin Cowen signal integration
