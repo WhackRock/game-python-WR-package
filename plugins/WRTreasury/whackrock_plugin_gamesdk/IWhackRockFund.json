@@ -207,60 +207,6 @@
         },
         {
             "type": "function",
-            "name": "dexRouter",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "contract IAerodromeRouter"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "emergencyWithdrawERC20",
-            "inputs": [
-                {
-                    "name": "_tokenAddress",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "_to",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "_amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "emergencyWithdrawNative",
-            "inputs": [
-                {
-                    "name": "_to",
-                    "type": "address",
-                    "internalType": "address payable"
-                },
-                {
-                    "name": "_amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
             "name": "getCurrentCompositionBPS",
             "inputs": [],
             "outputs": [
@@ -273,11 +219,6 @@
                     "name": "tokenAddresses_",
                     "type": "address[]",
                     "internalType": "address[]"
-                },
-                {
-                    "name": "tokenSymbols_",
-                    "type": "string[]",
-                    "internalType": "string[]"
                 }
             ],
             "stateMutability": "view"
@@ -296,30 +237,6 @@
                     "name": "tokenAddresses_",
                     "type": "address[]",
                     "internalType": "address[]"
-                },
-                {
-                    "name": "tokenSymbols_",
-                    "type": "string[]",
-                    "internalType": "string[]"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "isAllowedTokenInternal",
-            "inputs": [
-                {
-                    "name": "token",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
                 }
             ],
             "stateMutability": "view"
@@ -601,25 +518,6 @@
         },
         {
             "type": "event",
-            "name": "EmergencyWithdrawal",
-            "inputs": [
-                {
-                    "name": "token",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "amount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
             "name": "FundTokenSwapped",
             "inputs": [
                 {
@@ -701,6 +599,37 @@
                     "type": "uint256",
                     "indexed": false,
                     "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "SwapFailed",
+            "inputs": [
+                {
+                    "name": "tokenFrom",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "tokenTo",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "amountIn",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                },
+                {
+                    "name": "reason",
+                    "type": "bytes",
+                    "indexed": false,
+                    "internalType": "bytes"
                 }
             ],
             "anonymous": false
