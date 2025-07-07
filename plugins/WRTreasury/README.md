@@ -4,12 +4,12 @@ A GAME SDK plugin for managing WhackRock Fund smart contracts. This plugin lets 
 
 ## What It Does
 
-The WRTreasury plugin connects AI agents to WhackRock Fund contracts. Agents can:
-
-- Monitor portfolio weights in real-time
-- Automatically rebalance when portfolios drift from targets
-- Set new target allocations for fund assets
-- Track fund performance and analytics
+The WhackRock Treasury Plugin provides a comprehensive interface for AI agents to:
+- 📊 Monitor portfolio composition and NAV
+- ⚖️ Set target portfolio weights
+- 🔄 Trigger automatic rebalancing
+- 💰 Collect management fees
+- 📈 Track fund performance
 
 ## Key Features
 
