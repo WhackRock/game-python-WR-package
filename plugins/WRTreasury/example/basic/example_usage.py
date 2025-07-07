@@ -9,7 +9,7 @@ This example demonstrates how to:
 5. Integrate with GAME SDK for autonomous agents
 """
 
-from whackrock_fund_manager_gamesdk import WhackRockFundManagerSDK, create_fund_manager_functions
+from ..whackrock_plugin_gamesdk.whackrock_fund_manager_gamesdk import WhackRockFundManagerSDK, create_fund_manager_functions
 from game_sdk.game.worker import Worker
 from game_sdk.game.custom_types import FunctionResult
 import os
@@ -75,8 +75,8 @@ def example_with_write_operations():
     
     # Initialize SDK with private key for write operations
     web3_provider = "https://mainnet.infura.io/v3/YOUR_INFURA_KEY"
-    fund_address = "0x..."  # Replace with actual fund contract address
-    private_key = "0x..."  # Replace with agent's private key (keep secure!)
+    fund_address = os.getenv("FUND_CONTRACT_ADDRESS")  # Replace with actual fund contract address
+    private_key = os.getenv("AGENT_PRIVATE_KEY")  # Load agent's private key from environment variable
     account_address = "0x..."  # Replace with agent's address
     
     sdk = WhackRockFundManagerSDK(

@@ -17,8 +17,8 @@ from ..whackrock_plugin_gamesdk.whackrock_fund_manager_gamesdk import WhackRockF
 
 # Configuration - Replace with your actual values
 WEB3_PROVIDER = "https://mainnet.infura.io/v3/YOUR_INFURA_KEY"  # Replace with your RPC endpoint
-FUND_CONTRACT_ADDRESS = "0x..."  # Replace with actual fund contract address
-AGENT_PRIVATE_KEY = "0x..."  # Replace with agent's private key (keep secure!)
+FUND_CONTRACT_ADDRESS = os.getenv("FUND_CONTRACT_ADDRESS")  # Load fund contract address from environment variable
+AGENT_PRIVATE_KEY = os.getenv("AGENT_PRIVATE_KEY")  # Load agent's private key from environment variable
 AGENT_ADDRESS = "0x..."  # Replace with agent's address
 
 def create_rebalance_worker():
